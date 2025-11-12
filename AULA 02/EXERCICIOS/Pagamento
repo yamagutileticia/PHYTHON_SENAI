@@ -1,0 +1,33 @@
+print("=== Sistema de Pagamentos ===")
+
+valor_compra = float(input("Digite o valor da sua compra: R$"))
+
+print("""
+Escolha uma das opções abaixo:
+1. À vista Dinheiro (10% de desconto)
+2. À vista Cartão (2% de desconto)
+3. À vista PIX (25% de desconto)
+4. 2x no Cartão (sem desconto)
+5. 3x ou mais no Cartão (20% de juros)
+""")
+
+opcao = int(input("Opção: "))
+print(f"Calculando opção: {opcao}")
+
+if opcao == 1:
+    valor_final = valor_compra * 0.90  # 10% de desconto
+elif opcao == 2:
+    valor_final = valor_compra * 0.98  # 2% de desconto
+elif opcao == 3:
+    valor_final = valor_compra * 0.75  # 25% de desconto
+elif opcao == 4:
+    valor_final = valor_compra         # sem desconto
+elif opcao == 5:
+    valor_final = valor_compra * 1.20  # 20% de juros
+else:
+    print("Opção inválida! Tente novamente.")
+    valor_final = None
+
+if valor_final is not None:
+    print(f"O seu produto de R${valor_compra:.2f} com a opção {opcao} vai custar no final R${valor_final:.2f}") 
+
